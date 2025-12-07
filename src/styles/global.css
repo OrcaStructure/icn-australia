@@ -1,10 +1,44 @@
 @import "tailwindcss";
 
-@theme {
-  --color-a: #0ea5e9;
-  --color-b: #1f2937;
-  --color-c: #fff;
-  /* ... */
+@layer base {
+  /* Base body */
+  body {
+    @apply bg-black text-white font-sans;
+  }
 }
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Smooth scroll between sections */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle custom scrollbars (optional) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+@layer components {
+  /* Button styles reused via classes */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 uppercase tracking-[0.18em] text-sm md:text-base font-semibold text-black bg-gradient-to-r from-[#d4af37] to-[#f0cf63] hover:from-[#f0cf63] hover:to-[#d4af37] transition-colors;
+  }
+  
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center px-8 py-3 uppercase tracking-[0.18em] text-sm md:text-base font-semibold border border-white text-white hover:bg-white hover:text-black transition-colors;
+  }
+  
+  .section-title {
+    @apply text-xs md:text-sm uppercase tracking-[0.18em] text-white/80;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-extrabold uppercase tracking-tight;
+  }
+}

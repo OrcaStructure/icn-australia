@@ -1,60 +1,22 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-
-require('dotenv').config();
-
-
 module.exports = {
-  jsxRuntime: 'automatic',
-  pathPrefix: "/icn-australia", // If deploying to username.github.io, omit this
   siteMetadata: {
-    title: `ICN AUSTRALIA`,
-    description: `Your site description`,
+    title: `ICN Australia`,
+    siteUrl: `https://www.example.com`
   },
   plugins: [
-    'gatsby-plugin-theme-ui',
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN
-      },
-      
-    },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Bebas Neue",
-              variants: ["400", "500", "700"], // pick only what you need
-            },
-            {
-              family: "Source Sans Pro",
-              variants: ["400", "700"],
-            },
-          ],
-        },
-        formats: ["woff2", "woff"],
-        display: "swap",
-        preload: true,
-      },
-    },
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `divisions`,
-        path: `${__dirname}/src/data/divisions`,
+        name: `ICN Australia`,
+        short_name: `ICN`,
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#d4af37`,
+        display: `minimal-ui`,
+        icon: `src/images/logo-icn.png`
       }
     },
-    `gatsby-transformer-json`,
-
+    `gatsby-plugin-theme-ui`
   ]
 };
