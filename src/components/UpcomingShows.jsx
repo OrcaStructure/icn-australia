@@ -30,15 +30,16 @@ const events = [
 
 const UpcomingShows = () => {
   return (
-    <section className="bg-black py-16 md:py-20 border-y border-white/10">
+    <section className="relative bg-black py-16 md:py-20 border-y border-white/10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col gap-2 mb-8">
-          <p className="section-title">Upcoming</p>
-          <h2 className="section-heading">
-            <span>Shows</span>
-          </h2>
-          <p className="mt-2 text-xs md:text-sm text-white/70">
-            Experience a <span className="font-semibold">world-class</span>{" "}
+          <h1 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight">
+            <span>
+              Upcoming <span className="text-[#f0cf63]">Shows</span>
+            </span>
+          </h1>
+          <p className="mt-2 text-white">
+            Experience a <span className="font-semibold">WORLD-CLASS</span>{" "}
             experience at every level.
           </p>
         </div>

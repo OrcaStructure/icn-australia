@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import logo from "../images/logo-icn.png";
+import logo from "../images/logo2.png";
 
 const navLinks = [
   { to: "/events", label: "Events" },
@@ -18,12 +18,12 @@ const Navbar = () => {
           <img
             src={logo}
             alt="ICN Australia"
-            className="h-10 w-auto md:h-12"
+            className="h-10 w-auto md:h-30"
           />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.18em]">
+        <nav className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.18em]">
           {navLinks.map(link => (
             <Link
               key={link.to}
