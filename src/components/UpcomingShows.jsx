@@ -31,7 +31,30 @@ const events = [
 const UpcomingShows = () => {
   return (
     <section className="relative bg-black py-16 md:py-20 border-y border-white/10 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
+
+      {/* ---- RIGHT SIDE LOOPING BACKGROUND VIDEO ---- */}
+      <div className="absolute inset-y-0 right-0 w-[60%] md:w-[55%] lg:w-[50%] overflow-hidden pointer-events-none">
+        <video
+          src="/videos/icnaus_event_vid.mp4"
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        {/* Fade toward left to preserve readability */}
+        {/* horizontal fade LEFT */}
+        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/70 via-35% to-black/15 to-70%" />
+
+        {/* horizontal fade RIGHT */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 via-35% to-black/15 to-70%" />
+
+        {/* vertical fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/15" />
+      </div>
+      {/* ------------------------------------------------ */}
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="flex flex-col gap-2 mb-8">
           <h1 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight">
             <span>
